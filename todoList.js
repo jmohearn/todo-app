@@ -29,7 +29,6 @@ class TodoList {
   loadTasksFromLocalStorage() {
     const storedTasks = localStorage.getItem("tasks");
     this.taskList = JSON.parse(storedTasks) || [];
-    console.log(this.taskList);
     this.generateTodoUi();
   }
 
@@ -42,7 +41,7 @@ class TodoList {
       listItem.innerHTML = `
                   <h3 class="app-body--todo-header item">${task.title}</h3>
                   <h3 class="app-body--todo-completion item">${task.completion}</h3>
-                  <button id=${i} class="app-body--todo-btn edit" onClick="todoList.editTask(${i})">Edit</button>
+                  <button id=${i} class="app-body--todo-btn edit" onClick="editTaskModal(${i})">Edit</button>
                   <button id=${i} class="app-body--todo-btn delete" onClick="todoList.deleteTask(${i})">Delete</button>`;
       listItem.classList.add("app-body--todo");
       todoListUI.appendChild(listItem);

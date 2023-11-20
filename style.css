@@ -82,6 +82,7 @@ input {
   padding: 0.75rem;
   border-radius: 5px;
   margin-right: 1rem;
+  border: none;
 }
 
 .edit {
@@ -102,4 +103,22 @@ input {
 
 .delete:hover {
   background-color: #cc0000;
+}
+
+.modal {
+  height: 400px;
+  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
 }
