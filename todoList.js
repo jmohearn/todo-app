@@ -5,6 +5,18 @@ class TodoList {
 
   addTask(task) {
     this.taskList.push(task);
+    this.saveTaskstoLocalStorage();
+    this.generateTodoUi();
+  }
+
+  saveTaskstoLocalStorage() {
+    localStorage.setItem("tasks", JSON.stringify(this.taskList));
+  }
+
+  loadTasksFromLocalStorage() {
+    const storedTasks = localStorage.getItem("tasks");
+    this.taskList = JSON.parse(storedTasks) || [];
+    console.log(this.taskList);
     this.generateTodoUi();
   }
 

@@ -20,6 +20,6 @@ function renderNewTodo() {
 
 newTodoBtn.addEventListener("click", renderNewTodo);
 
-new Todo("shop", "today", "tomorrow");
-new Todo("bowling", "today", "friday");
-new Todo("clean", "today", "saturday");
+document.addEventListener("DOMContentLoaded", () => {
+  todoList.loadTasksFromLocalStorage();
+});
