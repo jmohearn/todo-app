@@ -15,10 +15,14 @@ class Todo {
     this.addTodo();
   }
 
-  addTodo(todo) {
+  addTodo() {
     todoList.push(this);
   }
 }
+
+new Todo("shop", "today", "tomorrow");
+new Todo("bowling", "today", "friday");
+new Todo("clean", "today", "saturday");
 
 class App {
   constructor(todos) {
@@ -63,6 +67,24 @@ class App {
     </ul>
   </div>`;
 
+    this.generateTodoUi();
+  }
+
+  generateTodoUi() {
+    const todoListUI = document.querySelector(".app-body--todos");
+
+    this.todos.forEach((todo) => {
+      let html = `
+            <li class="app-body--todo">
+                <h3 class="app-body--todo-header">${todo.title}</h3>
+                <h3 class="app-body--todo-date">${todo.date}</h3>
+                <h3 class="app-body--todo-completion">${todo.completion}</h3>
+                <div class="app-body--todo-btn">Delete</div>
+            </li>`;
+
+      todoListUI.insertAdjacentHTML("afterend", html);
+    });
+
     this.newTodoBtnHandler();
   }
 
@@ -85,21 +107,6 @@ class App {
         newTodoTitleInput.value = "";
         newTodoCompleteInput.value = "";
       }
-    });
-  }
-
-  generateTodoUi() {
-    const todoListUI = document.querySelector(".app-body--todos");
-
-    this.todos.forEach((todo) => {
-      let html = `
-            <li class="app-body--todo">
-                <h3 class="app-body--todo-header">${this.title}</h3>
-                <h3 class="app-body--todo-date">${this.date}</h3>
-                <div class="app-body--todo-btn">Delete</div>
-            </li>`;
-
-      todoListUI.insertAdjacentHTML("afterend", html);
     });
   }
 }

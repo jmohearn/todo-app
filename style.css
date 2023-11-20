@@ -15,3 +15,20 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.app-body--todo {
+  display: flex;
+  padding: 1rem;
+}
+
+.app-body--todo-header {
+  width: 6rem;
+}
+
+.app-body--todo-date {
+  width: 6rem;
+}
+
+.app-body--todo-completion {
+  width: 6rem;
+}
