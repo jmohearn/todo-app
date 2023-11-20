@@ -9,16 +9,61 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: rgb(237, 237, 237);
+  font-family: "Lato", sans-serif;
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  min-width: 400px;
+}
+
+.app-header {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.app-controls--row {
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  height: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.app-controls--new-todo-add-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.app-controls--new-todo-add-btn:hover {
+  background-color: #0056b3;
 }
 
 .app-body--todo {
   display: flex;
   padding: 1rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
 }
 
 .app-body--todo-header {
@@ -31,4 +76,30 @@ body {
 
 .app-body--todo-completion {
   width: 6rem;
+}
+
+.app-body--todo-btn {
+  padding: 0.75rem;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.edit {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.edit:hover {
+  background-color: #0056b3;
+}
+
+.delete {
+  background-color: #ff3333;
+  color: white;
+  cursor: pointer;
+}
+
+.delete:hover {
+  background-color: #cc0000;
 }

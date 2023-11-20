@@ -13,9 +13,16 @@ function renderNewTodo() {
   const newTodoCompleteInput = document.querySelector(
     "#app-controls--new-todo-completion"
   );
-  new Todo(newTodoTitleInput.value, "today", newTodoCompleteInput.value);
-  newTodoTitleInput.value = "";
-  newTodoCompleteInput.value = "";
+
+  if (!newTodoTitleInput.value || !newTodoCompleteInput.value) {
+    alert("Need to complete form!");
+    return;
+  } else {
+    new Todo(newTodoTitleInput.value, currentTime, newTodoCompleteInput.value);
+    newTodoTitleInput.value = "";
+    newTodoCompleteInput.value = "";
+    newTodoCompleteInput.blur();
+  }
 }
 
 newTodoBtn.addEventListener("click", renderNewTodo);
