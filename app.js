@@ -73,15 +73,15 @@ class App {
   generateTodoUi() {
     const todoListUI = document.querySelector(".app-body--todos");
 
-    this.todos.forEach((todo) => {
+    this.todos.forEach((todo, i, arr) => {
       let html = `
             <li class="app-body--todo">
                 <h3 class="app-body--todo-header">${todo.title}</h3>
                 <h3 class="app-body--todo-date">${todo.date}</h3>
                 <h3 class="app-body--todo-completion">${todo.completion}</h3>
-                <div class="app-body--todo-btn">Delete</div>
+                <div id=${i} class="app-body--todo-btn">Delete</div>
             </li>`;
-
+      console.log(i);
       todoListUI.insertAdjacentHTML("afterend", html);
     });
 
